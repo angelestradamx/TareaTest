@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private  lateinit var  binding:  ActivityMainBinding
-    val miTag:String = "Udelp"
+    val miTag:String = "UdelP"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
