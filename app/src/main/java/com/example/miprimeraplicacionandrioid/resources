@@ -1,0 +1,74 @@
+
+
+https://cursokotlin.com/capitulo-29-view-binding-en-kotlin/
+
+https://developer.android.com/topic/libraries/data-binding/generated-binding?hl=es
+
+https://developer.android.com/guide/components/intents-common?hl=es-419
+
+
+
+https://ricardogeek.com/entendiendo-las-funciones-de-alcance-en-kotlin/
+https://www.develou.com/funcion-apply-en-kotlin/
+
+
+//*******************INTENTS*****************************
+
+     //Intent Explícito sin parámetros
+            //val i = Intent(this@FormActivity,DetailActivity::class.java)
+            //startActivity(i)
+
+            val i = Intent(this@FormActivity,DetailActivity::class.java).apply {
+                putExtra("Id", 23)
+                putExtra("Name", "Angel Estrada")
+            }
+            startActivity(i)
+
+
+
+            //Intent Implícito
+
+            //APPLY  ** Es usado para configuración  de objetos post-construccion
+
+            /*
+            val i = Intent(Intent.ACTION_VIEW).apply {  data= Uri.parse("http://www.amv.mx")}
+            if (i.resolveActivity(packageManager) !=null) {
+                startActivity(i)
+            }
+            */
+
+            /*
+            val intentUri = Uri.parse("geo:19.28958619366017,-99.13938537622406?z=18 &q=19.28958619366017,-99.13938537622406")
+            val intent = Intent(Intent.ACTION_VIEW).apply { data = intentUri }
+            if (intent.resolveActivity(packageManager) !=null) {
+                startActivity(intent)
+            }
+            */
+
+            //ACTION_DIAL: abre la aplicación de teléfono o marcador.
+            //ACTION_CALL: inicia una llamada telefónica (requiere el permiso CALL_PHONE).
+            //    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+            /*
+            val intentUri = Uri.parse("tel:$5523280941")
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data= intentUri
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            }
+            */
+
+            /*
+            val emails  = arrayOf("angelestradamx@hotmail.com")
+
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_EMAIL, emails)
+                putExtra(Intent.EXTRA_SUBJECT, "Correo de Angel")
+                putExtra(Intent.EXTRA_TEXT, "Hola este es un correo de prueba.")
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            }
+            */
